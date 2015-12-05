@@ -7,7 +7,8 @@
       var response = this.ajax('/login', data ,'POST');
     },
     ajax: function(url, params, method) {
-      var xRequest, response;
+      var xRequest, response ;
+      var serverurl = "http://127.0.0.1/"+ url;
       if (window.XMLHttpRequest)
           {
              xRequest = new XMLHttpRequest();
@@ -22,7 +23,7 @@
                 response = xRequest1.responseText;
            }
           };
-        xRequest1.open(method, url, "true");
+        xRequest1.open(method, serverurl, "true");
         xRequest1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xRequest1.send(data);
         return response;
