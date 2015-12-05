@@ -27,25 +27,38 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        this.loginEvent();
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
-
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
         console.log('Received Event: ' + id);
+    },
+    loginEvent:function(){
+      var loginElement = document.getElementById('login-page');
+      var deviceElement = document.getElementById('splash-screen');
+      loginElement.setAttribute('style', 'display:block;');
+      deviceElement.setAttribute('style', 'display:none');
+      var loginSubmit = document.getElementById('login-submit');
+      loginSubmit.addEventListener("click", this.checkLogin);
+    },
+    checkLogin:function(){
+
     }
 };
 
 app.initialize();
+hydra.login();

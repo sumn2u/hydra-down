@@ -5,7 +5,7 @@
    // used for login purpose
     login:function(username, password){
       var data= JSON.stringify({ username: username, password:password });
-      var response = this.ajax('/login', data ,'POST');
+      // var response = this.ajax('/login', data ,'POST');
     },
     // used to call the ajax request
     ajax: function(url, params, method) {
@@ -22,7 +22,7 @@
         xRequest.onreadystatechange = function() {
            if ((xRequest.readyState == 4) && (xRequest.status == 200))
            {
-                response = xRequest1.responseText;
+                response = xRequest.responseText;
            }
           };
         xRequest1.open(method, serverurl, "true");
@@ -36,7 +36,7 @@
      },
      //remove data from local Storage
      logout:function(){
-         window.localStorage.clear(); /
+         window.localStorage.clear();
      }
  }
 

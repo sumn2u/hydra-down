@@ -36,24 +36,27 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
+        <div class="app" id="splash-screen">
             <h1>HYDRA DOWN</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">We are ready ..</p>
             </div>
         </div>
-        <section id="login-page" class="form-login">
+        <section id="login-page" class="form-login" style="display:none">
           <span> Login</span>
             </hr>
             <form action="" name="" id="login-check">
                 <label> Username</label>
-                <input type="text" name="username"/> 
-                <label> Password</label> 
-                <input type="password" name="password"/> 
+                <input type="text" name="username"/>
+                <label> Password</label>
+                <input type="password" name="password"/>
+                <button type="button" id="login-submit" name="button"> Submit</button>
             </form>
         </section>
-        <script type="text/javascript" src="cordova.js"></script>
+        <!-- <script type="text/javascript" src="../cordova.js"></script> -->
+        <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
     </body>
 </html>
